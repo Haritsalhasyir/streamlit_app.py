@@ -1,0 +1,46 @@
+import streamlit as st 
+import pandas as pd
+
+
+st.write(
+    """
+    # My first app
+    Hello World, Ini Project Streamlit Saya [Harits Al Hasyir & 4232401001]!
+    """
+)
+
+
+# Menampilkan identitas user
+st.title("Tugas Pertemuan 12")
+st.header("Implementasi Streamlit")
+st.subheader("Nama User: HaritsAlHasyir")
+
+# Menambahkan komponen teks (Paragraf)
+st.write("""
+Aplikasi ini dibuat sebagai bagian dari tugas praktikum Python. 
+Di bawah ini adalah demonstrasi penggunaan elemen-elemen dasar Streamlit.
+""")
+
+# Menambahkan Caption
+st.caption("Data di bawah ini merupakan data simulasi skor penjualan.")
+
+# Menambahkan komponen potongan kode (Code)
+st.write("Contoh kode untuk membuat data:")
+st.code("""
+data = pd.DataFrame({
+    'Produk': ['A', 'B', 'C', 'D'],
+    'Skor': [85, 90, 78, 92]
+})
+""", language='python')
+
+# Menampilkan Data Display: Tabel
+st.write("### 1. Data Display: Tabel")
+data = pd.DataFrame({
+    'Produk': ['Produk A', 'Produk B', 'Produk C', 'Produk D'],
+    'Skor': [85, 90, 78, 92]
+})
+st.table(data)
+
+# Menampilkan Data Display: Chart (Grafik)
+st.write("### 2. Data Display: Chart")
+st.bar_chart(data.set_index('Produk'))
